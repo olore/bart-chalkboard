@@ -1,5 +1,9 @@
 <html>
   <style>
+    @font-face {
+      font-family: "pencil-pete";
+      src: url("PencilpeteFont-2eE3.ttf") format("truetype");
+    }
     .wrapper {
       perspective: 800px;
       perspective-origin: 50% 65%;
@@ -8,6 +12,7 @@
       height: 400px;
     }
     .chalkboard-text {
+      font-family: "pencil-pete";
       background-color: darkolivegreen;
       position: absolute;
       top: -22px;
@@ -15,27 +20,18 @@
       height: 400px;
       width: 426px;
       color: white;
-      font-size: 20px;
+      font-size: {{ fontSize }};
       font-weight: bold;
-      line-height: 30px;
+      line-height: {{ lineHeight }};
       transform: rotateY( 35deg );
     }
   </style>
   <body>
     <div class="wrapper">
       <div class="chalkboard-text">
-        {{ text }}
-        <br />
-        {{ text }}
-        <br />
-        {{ text }}
-        <br />
-        {{ text }}
-        <br />
-        {{ text }}
-        <br />
-        {{ text }}
-        <br />
+        {{#text}}
+          {{.}} <br />
+        {{/text}}
       </div>
     </div>
     <img src="bart-chalkboard.png" style="width:800px;height:604px; position:absolute;z-index:0" />

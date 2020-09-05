@@ -1,3 +1,10 @@
 {
-  "text": "This is from the shell"
+  "text": [
+    "This is a test from the shell",
+    "This is a test from the shell",
+    "This is a test from the shell",
+    "This is a test from the shell"
+  ],
+  "lineHeight": "30px",
+  "lineCount": 12
 }
