@@ -5,7 +5,7 @@ const kebabCase = require('lodash.kebabcase');
 const app = express()
 const port = 8000
 
-app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'))
 
@@ -16,12 +16,16 @@ app.get('/', (req, res) => {
 
 app.post('/slack', async (req, res) => {
   console.log("From Slack: " + req.body.text);
+  const url = `https://bart.olore.net/pics/${kebabCase(req.body.text)}`;
+  console.log(url);
+
   await screenshot(req.body.text);
+
   res.json({
     "response_type": "in_channel",
     "text": "Hello",
     "attachments": [{
-      "image_url": `https://bart.olore.net/${kebabCase(req.body.text)}`
+      "image_url": url
     }]
   });
 })
