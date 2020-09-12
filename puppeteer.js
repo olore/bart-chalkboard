@@ -1,5 +1,4 @@
-import kebabCase from 'lodash.kebabcase';
-
+const kebabCase = require('lodash.kebabcase');
 const puppeteer = require('puppeteer');
 
 const screenshot = async (text) => {
@@ -18,4 +17,4 @@ const screenshot = async (text) => {
   await browser.close();
 };
 
-export default screenshot;
+module.exports = screenshot;

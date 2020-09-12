@@ -14,7 +14,7 @@ app.get('/', (req, res) => {
   res.send(generate(req.query.s));
 })
 
-app.post('/slack', (req, res) => {
+app.post('/slack', async (req, res) => {
   console.log("From Slack: " + req.body.text);
   await screenshot(req.body.text);
   res.json({
