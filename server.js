@@ -1,6 +1,6 @@
 const express = require('express')
 const { generate } = require("./index");
-const { default: screenshot } = require('./puppeteer');
+const { screenshot } = require('./puppeteer');
 const kebabCase = require('lodash.kebabcase');
 const app = express()
 const port = 8000

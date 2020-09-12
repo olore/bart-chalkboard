@@ -17,4 +17,4 @@ const screenshot = async (text) => {
   await browser.close();
 };
 
-module.exports = screenshot;
+exports.screenshot = screenshot;
