@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 
 app.post('/slack', async (req, res) => {
   console.log("From Slack: " + req.body.text);
-  const url = `https://bart.olore.net/pics/${kebabCase(req.body.text)}`;
+  const url = `https://bart.olore.net/pics/${kebabCase(req.body.text)}.png`;
   console.log(url);
 
   await screenshot(req.body.text);
