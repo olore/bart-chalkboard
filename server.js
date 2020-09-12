@@ -1,5 +1,7 @@
 const express = require('express')
 const { generate } = require("./index");
+const { default: screenshot } = require('./puppeteer');
+const kebabCase = require('lodash.kebabcase');
 const app = express()
 const port = 8000
 
@@ -14,11 +16,12 @@ app.get('/', (req, res) => {
 
 app.post('/slack', (req, res) => {
   console.log("From Slack: " + req.body.text);
+  await screenshot(req.body.text);
   res.json({
     "response_type": "in_channel",
-    "text": generate(req.body.text),
+    "text": "Hello",
     "attachments": [{
-      "image_url": "https://raw.githubusercontent.com/olore/bart-chalkboard/master/public/bart-chalkboard.png"
+      "image_url": `https://bart.olore.net/${kebabCase(req.body.text)}`
     }]
   });
 })
