@@ -23,7 +23,7 @@ app.post('/slack', async (req, res) => {
 
   res.json({
     "response_type": "in_channel",
-    "text": "Hello",
+    //"text": req.body.text,
     "attachments": [{
       "image_url": url
     }]
