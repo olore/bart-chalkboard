@@ -1,0 +1,18 @@
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-16.04
+    steps:
+      - name: ssh with multiple commands
+        uses: appleboy/ssh-action@master
+        with:
+          debug: true
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          port: ${{ secrets.PORT }}
+          script: sh /home/olore/apps/bart-chalkboard/scripts/update.sh

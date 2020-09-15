@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "",
@@ -13,6 +13,7 @@
     "express": "^4.17.1",
     "lodash.kebabcase": "^4.1.1",
     "mustache": "^4.0.1",
+    "nodemon": "^2.0.4",
     "puppeteer": "^5.3.0"
   }
 }
