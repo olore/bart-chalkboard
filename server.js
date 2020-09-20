@@ -27,13 +27,13 @@ app.get('/', (req, res) => {
 })
 
 app.post('/slack', async (req, res) => {
-  let text = req.query && req.query.s;
+  let text = req.body && req.body.text;
   if (text.length > 256) {
     res.status(400).send("Invalid request");
   } else {
     console.log(`From Slack message: ${text}`);
     console.log(`From Slack: ${req.body.team_domain} - ${req.body.user_name}`);
-    const url = `https://bart.olore.net/pics/${kebabCase(req.body.text)}.png`;
+    const url = `https://bart.olore.net/pics/${kebabCase(text)}.png`;
 
     await screenshot(text);
 
