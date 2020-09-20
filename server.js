@@ -18,9 +18,7 @@ app.get('/', (req, res) => {
     if (!req.query.slack) {
       console.log(`From Web: ${text}`);
     }
-    if (text.length > 255)  {
-      res.send(generate(text));
-    }
+    res.send(generate(text));
   } else {
     res.status(400).send("Invalid request");
   }
