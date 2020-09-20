@@ -10,7 +10,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'))
 
 app.get('/', (req, res) => {
-  console.log(`Request from ${req.ip}`);
+  var ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  console.log(`Request from ${ip}`);
 
   let text = req.query && req.query.s;
   if (text && text.length < 256) {
