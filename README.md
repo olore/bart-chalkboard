@@ -19,6 +19,13 @@ or **"Bart as a Service"** is a service that provides an HTML rendering of text 
 
 You can host this yourself and run it for your Slack workspace, as I am currently doing. I think trying to publish it into the official Slack App directory will raise copyright questions, so I am not planning on hosting it for the world.
 
+## Discord
+ * Add this bot to your discord, then send it messages!
+ * `!bart testing 1 2 3`
+ * Create/Modify `.env` to add a value for `DISCORD_TOKEN=`
+ * I followed instructions here: https://www.digitaltrends.com/gaming/how-to-make-a-discord-bot/
+ * Here is documentation for bots https://discord.js.org/#/docs/main/master/general/welcome
+
 ## Thanks
 * Inspiration: http://www.ranzey.com/generators/bart/index.html (Seriously check this out!)
 * Font: https://www.fontspace.com/pencilpete-font-f8223

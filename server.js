@@ -2,8 +2,8 @@ const express = require('express')
 const { generate } = require("./index");
 const { screenshot } = require('./puppeteer');
 const kebabCase = require('lodash.kebabcase');
-const app = express()
-const port = 8000
+const app = express();
+const port = 8000;
 
 app.use(express.urlencoded({ extended: true }));
 
